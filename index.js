@@ -1,12 +1,16 @@
 const express = require('express');  //requerimos paquete de express
 const res = require('express/lib/response');
 const cors = require('cors'); //CORS es un paquete de node.js para proporcionar un middleware Connect / Express que se puede usar para habilitar CORS con varias opciones.
+const { dbConection } = require('./db/config');
 require('dotenv').config();
 
 // console.log( process.env );
 
 // Crear el servidor/ aplicación de express
 const app = express();
+
+//Base de datos
+dbConection();
 
 //directorio Publico carpeta public
 app.use( express.static('public') );
