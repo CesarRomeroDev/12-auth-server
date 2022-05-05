@@ -9,3 +9,8 @@ Todos los cambios notables realizados en estre proyecto se agregarán a este arc
     - [04-05-2022]
     - Seguimiento Sección 24: Auth Backend Mean
     - Lecciones 368 a 378
+
+### Added
+    - [05-05-2022]
+    - Fín Sección 24: Auth Backend Mean
+    - Lecciones 378 a 381

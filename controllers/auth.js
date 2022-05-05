@@ -84,12 +84,17 @@ const loginUsuario = async(req, res) => {
     }
 }
 
-const revalidarToken = (req, res) => {
+const revalidarToken = async(req, res = response) => {
+
+    const { uid, name } = req;
+    const token = await generarJWT(uid, name);
 
     return res.json({
         ok: true,
-        msj: 'Renew /'
-    })
+        uid,
+        name,
+        token
+    });
 }
 
 //exportamos nuestras funciones para las rutas de auth.js

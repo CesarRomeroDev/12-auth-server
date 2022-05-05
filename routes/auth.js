@@ -2,6 +2,7 @@ const { Router } = require('express');  //requerimon paquete Router de express
 const { check } = require('express-validator');
 const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/auth');
 const { validarCampos } = require('../middlewares/validar-capos');
+const { validarJWT } = require('../middlewares/validar-jwt');
 
 
 const router = Router();    //función Router
@@ -26,7 +27,7 @@ router.post( '/',[
 
 //validar y revalidar token
 //validarToken viene de los controllers auth.js
-router.get( '/renew', revalidarToken);
+router.get( '/renew', validarJWT, revalidarToken);
 
 
 
